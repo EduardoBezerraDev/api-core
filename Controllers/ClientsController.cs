@@ -18,7 +18,7 @@ namespace MyClient.Controllers
             _AppDbContext = appDbContext;
         }
 
-        [HttpGet("/all")]
+        [HttpGet]
         public async Task<IActionResult> GetClients()
         {
             return Ok(new { success = true, data = await _AppDbContext.Clients.ToListAsync() });

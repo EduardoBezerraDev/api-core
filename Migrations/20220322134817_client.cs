@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace api_core.Migrations
 {
-    public partial class Address : Migration
+    public partial class client : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -14,13 +14,14 @@ namespace api_core.Migrations
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Client = table.Column<int>(type: "int", nullable: false),
-                    IsCommercial = table.Column<bool>(type: "bit", nullable: false),
-                    Cep = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    State = table.Column<string>(type: "varchar(2)", nullable: true),
-                    Street = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    Number = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    Complement = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    District = table.Column<string>(type: "nvarchar(max)", nullable: true)
+                    IsCommercial = table.Column<int>(type: "int", nullable: false),
+                    Cep = table.Column<string>(type: "nvarchar(8)", nullable: false),
+                    City = table.Column<string>(type: "nvarchar(10)", nullable: false),
+                    State = table.Column<string>(type: "nvarchar(2)", nullable: false),
+                    Street = table.Column<string>(type: "varchar(50)", nullable: false),
+                    Number = table.Column<string>(type: "nvarchar(8)", nullable: false),
+                    Complement = table.Column<string>(type: "nvarchar(30)", nullable: true),
+                    District = table.Column<string>(type: "varchar(30)", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -33,9 +34,9 @@ namespace api_core.Migrations
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    Name = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    Birthdate = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    Gender = table.Column<string>(type: "nvarchar(max)", nullable: true)
+                    Name = table.Column<string>(type: "varchar(50)", nullable: true),
+                    Birthdate = table.Column<DateTime>(type: "DateTime", nullable: false),
+                    Gender = table.Column<string>(type: "varchar(9)", nullable: true)
                 },
                 constraints: table =>
                 {

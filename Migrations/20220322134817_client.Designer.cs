@@ -10,8 +10,8 @@ using MyClient.Models;
 namespace api_core.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20220322030745_Client")]
-    partial class Client
+    [Migration("20220322134817_client")]
+    partial class client
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -29,28 +29,36 @@ namespace api_core.Migrations
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                     b.Property<string>("Cep")
-                        .HasColumnType("nvarchar(max)");
+                        .IsRequired()
+                        .HasColumnType("nvarchar(8)");
+
+                    b.Property<string>("City")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(10)");
 
                     b.Property<int>("Client")
                         .HasColumnType("int");
 
                     b.Property<string>("Complement")
-                        .HasColumnType("nvarchar(max)");
+                        .HasColumnType("nvarchar(30)");
 
                     b.Property<string>("District")
-                        .HasColumnType("nvarchar(max)");
+                        .HasColumnType("varchar(30)");
 
-                    b.Property<bool>("IsCommercial")
-                        .HasColumnType("bit");
+                    b.Property<int>("IsCommercial")
+                        .HasColumnType("int");
 
                     b.Property<string>("Number")
-                        .HasColumnType("nvarchar(max)");
+                        .IsRequired()
+                        .HasColumnType("nvarchar(8)");
 
                     b.Property<string>("State")
-                        .HasColumnType("varchar(2)");
+                        .IsRequired()
+                        .HasColumnType("nvarchar(2)");
 
                     b.Property<string>("Street")
-                        .HasColumnType("nvarchar(max)");
+                        .IsRequired()
+                        .HasColumnType("varchar(50)");
 
                     b.HasKey("Id");
 
@@ -65,13 +73,13 @@ namespace api_core.Migrations
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                     b.Property<DateTime>("Birthdate")
-                        .HasColumnType("datetime2");
+                        .HasColumnType("DateTime");
 
                     b.Property<string>("Gender")
-                        .HasColumnType("nvarchar(max)");
+                        .HasColumnType("varchar(9)");
 
                     b.Property<string>("Name")
-                        .HasColumnType("nvarchar(max)");
+                        .HasColumnType("varchar(50)");
 
                     b.HasKey("Id");
 
