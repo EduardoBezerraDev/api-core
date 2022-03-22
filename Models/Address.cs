@@ -6,6 +6,7 @@ namespace MyAddress.Models
     {
         public int Id { get; set; }
 
+        [Column(TypeName = "int")]
         public int Client { get; set; } //Relacionamento com a tabela clients
 
         [Column(TypeName = "boolean")]
