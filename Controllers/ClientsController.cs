@@ -18,20 +18,20 @@ namespace MyClient.Controllers
             _AppDbContext = appDbContext;
         }
 
-        [HttpGet("/all")]
+        [HttpGet]
         public async Task<IActionResult> GetClients()
         {
             return Ok(new { success = true, data = await _AppDbContext.Clients.ToListAsync() });
         }
+
         [HttpGet("filter")]
-        public async Task<IActionResult> GetClient(int id)
+        public async Task<IActionResult> GetOneClient(int id)
         {
             return Ok(new { success = true, data = await _AppDbContext.Clients.FindAsync(id) });
         }
 
-
         [HttpPost]
-        public async Task<IActionResult> CreateCar(Client client)
+        public async Task<IActionResult> CreateClient(Client client)
         {
             _AppDbContext.Clients.Add(client);
             await _AppDbContext.SaveChangesAsync();

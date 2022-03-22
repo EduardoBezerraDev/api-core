@@ -23,6 +23,13 @@ namespace MyAddress.Controllers
             return Ok(new { success = true, data = await _AppDbContext.Clients.ToListAsync() });
         }
 
+        [HttpGet("filter")]
+        public async Task<IActionResult> GetOneAdress()
+        {
+            return Ok(new { success = true, data = await _AppDbContext.Address.ToListAsync() });
+        }
+
+
         [HttpPost]
         public async Task<IActionResult> CreateClient(Address address)
         {
