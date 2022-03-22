@@ -2,7 +2,7 @@
 
 namespace api_core.Migrations
 {
-    public partial class Address : Migration
+    public partial class Client : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {

@@ -44,6 +44,9 @@ namespace api_core.Migrations
                     b.Property<string>("Number")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("State")
+                        .HasColumnType("varchar(2)");
+
                     b.Property<string>("Street")
                         .HasColumnType("nvarchar(max)");
 

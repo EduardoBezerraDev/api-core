@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace api_core.Migrations
 {
-    public partial class Client : Migration
+    public partial class Address : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -16,6 +16,7 @@ namespace api_core.Migrations
                     Client = table.Column<int>(type: "int", nullable: false),
                     IsCommercial = table.Column<bool>(type: "bit", nullable: false),
                     Cep = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    State = table.Column<string>(type: "varchar(2)", nullable: true),
                     Street = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Number = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Complement = table.Column<string>(type: "nvarchar(max)", nullable: true),

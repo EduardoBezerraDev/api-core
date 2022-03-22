@@ -10,7 +10,7 @@ using MyClient.Models;
 namespace api_core.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20220322015031_Client")]
+    [Migration("20220322030745_Client")]
     partial class Client
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -45,6 +45,9 @@ namespace api_core.Migrations
 
                     b.Property<string>("Number")
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("State")
+                        .HasColumnType("varchar(2)");
 
                     b.Property<string>("Street")
                         .HasColumnType("nvarchar(max)");
